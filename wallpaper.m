@@ -1,19 +1,19 @@
-%------ Name: Jingxuan Hou------
-%
-% ------Date: 08/02/2023------
-%
-% ------Title: Wallpaper GUI------
-%
-
+% Title: Wallpaper GUI, 2023 Summer Research Project (Part II)
+% By Paisley (Jingxuan) Hou
+% Date: 07/21/2023
 % ------Description------
-
 % This program creates a GUI that displays wallpaper patterns along with
-% its original image based on a user-defined symmetry group. 
+% its original image based on a user-defined symmetry group. The program
+% incorporates options for all 15 possible symmetry groups for the wallpapers.
+% The user can also specify the number of terms they desire for the wave function,
+% and any RGB image from which to generate the wallpaper based on the domain-coloring
+% algorithm provided in the program.
 % The user interface contains sliders for users to play around with 
 % different coefficients and frequencies for the wave function and
 % generate different wallpaper patterns from the given image.
+% Mathematical theories behind the program referred to the book Creating Symmetry, by Professor Farris from Santa Clara University.
 
-%%
+
 %INPUTs
 
 %User-defined inputs
