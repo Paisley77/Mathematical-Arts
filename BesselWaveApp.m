@@ -1,11 +1,7 @@
-% ------Title: Wave Surface Based on Bessel Function (2023 Summer Research Project, Santa Clara University)------
-%
-% ------By Jingxuan Hou------
-%
-% ------Date: 08/12/2023------
-%
-% ------Description------
-%
+% Title: Bessel Wave Surface GUI, 2023 Summer Research Project (Part III)
+% By Paisley (Jingxuan) Hou------
+% Date: 08/12/2023------
+% Description:
 % This program file creates a GUI window that displays the wave
 % surface from bessel functions as a superposition of a user-defined number
 % of terms. Each term of the wave surface is defined as follows:
@@ -36,7 +32,8 @@
 % saved to a .avi file titled "vibrating_drumhead.avi" in the same
 % directory as the where the current program is located.
 %
-%%
+
+
 %User-defined variables
 nTerms = input("Number of terms: ");
 imgPath = input("Source image file for texture mapping: ","s");
@@ -133,7 +130,7 @@ end
 
 
 function z = zEval()
-global ns ms amps mags angles Num R Theta
+global ns ms mags angles Num R Theta
 
 %Initialize function space
 z = zeros(Num+1, Num+1);
@@ -143,16 +140,11 @@ nTerms = size(ns,1);
 for i = 1:nTerms
     n = ns(i);
     m = ms(i);
-%     A = mags(i);
-%     phi = angles(i);
-%     L = besselzero(n, 100, 1);
-%     z = z + besselj(n, L(m)*R) .* (A*(cos(n.*(Theta+phi))+sin(n.*(Theta+phi))));
-    amp = amps(i);
-    L = besselzero(n, 20, 1);
-    J = besselj(n, L(m).*R);
-    z = z + amp.*J.*complex(cos(n*Theta), sin(n*Theta));
+    A = mags(i);
+    phi = angles(i);
+    L = besselzero(n, 100, 1);
+    z = z + besselj(n, L(m)*R) .* (A*(cos(n.*(Theta+phi))+sin(n.*(Theta+phi))));
 end
-z = abs(z);
 
 end
 
@@ -421,6 +413,7 @@ z = zEval();
 
 %Get colormap
 colormap = getimage(ax_2dmap);
+colormap = imrotate(colormap, 90);
 
 %Find z limits
 zMax = max(z, [], 'all');
