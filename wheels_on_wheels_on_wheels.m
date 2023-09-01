@@ -1,3 +1,12 @@
+%Title: Wheels-on-Wheels-on-Wheels GUI, 2023 Summer Research Project (Part I)
+%By: Paisley (Jingxuan) Hou
+%Date: 07/01/2023
+%Description 
+%This program generates a graphical user interface that allows users to experiment with different frequencies for the displayed wheels-on-wheels-on-wheels pattern. 
+%The user is allowed to define the number of folds and symmetry type they desire, as well as the number of terms.
+%As the user adjust the frequency value for each term using the sliders provided, the program automatically rounds the value to the nearest integer that satisfies the symmetry requirement.
+%Related mathematical theories referring to the book Creating Symmetry, by Professor Frank Farris from Santa Clara University.
+
 %Constant variable
 t = 0:0.001:2*pi;
 %%
